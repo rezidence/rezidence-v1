@@ -6,7 +6,8 @@ frontend:
         - export NODE_ENV=production
         - export NODE_VERSION=18
         - nvm use 18
-        - npm ci
+        - npm config set legacy-peer-deps true
+        - npm ci --legacy-peer-deps
         - npm run prisma generate
     build:
       commands:
@@ -15,6 +16,10 @@ frontend:
     baseDirectory: .next
     files:
       - '**/*'
+      - ../node_modules/**/*
+      - ../package.json
+      - ../prisma/**/*
+      - ../public/**/*
   cache:
     paths:
       - node_modules/**/*
