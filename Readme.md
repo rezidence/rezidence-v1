@@ -1,4 +1,4 @@
-# 3D Property Rental Platform
+# Rezidence
 
 A modern web application for exploring rental properties in 3D with AR technology and gamified features. Currently in development with a waitlist system for early access.
 
