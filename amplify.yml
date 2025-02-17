@@ -8,9 +8,10 @@ frontend:
         - nvm use 18
         - rm -f package-lock.json
         - npm install --legacy-peer-deps
-        - npm run prisma generate
+        - npx prisma generate
     build:
       commands:
+        - env | grep -e DATABASE_URL -e NEXTAUTH_URL -e NEXTAUTH_SECRET > .env.production
         - npm run production:build
   artifacts:
     baseDirectory: .next
@@ -19,6 +20,7 @@ frontend:
       - ../node_modules/**/*
       - ../package.json
       - ../prisma/**/*
+      - ../.next/**/*
       - ../public/**/*
   cache:
     paths:
