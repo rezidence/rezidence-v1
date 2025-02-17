@@ -4,7 +4,6 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { config } from './config/config';
-import waitlistRoutes from './routes/waitlist.routes';
 
 // Initialize express app
 const app = express();
@@ -23,9 +22,6 @@ app.use(morgan('dev'));
 mongoose.connect(config.mongoUri)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
-
-// Routes
-app.use('/api/waitlist', waitlistRoutes);
 
 // Basic route
 app.get('/api/health', (req, res) => {
