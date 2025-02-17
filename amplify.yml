@@ -8,9 +8,8 @@ frontend:
         - nvm use 18
         - rm -f package-lock.json
         - npm install --legacy-peer-deps
-        - npm install -g prisma
-        - export PATH="$PATH:./node_modules/.bin"
-        - prisma generate
+        - npm install prisma --save-dev
+        - npx prisma generate
     build:
       commands:
         - env | grep -e DATABASE_URL -e NEXTAUTH_URL -e NEXTAUTH_SECRET > .env.production
