@@ -26,11 +26,8 @@ const waitlistMiddleware = async (req: Request, res: Response, next: NextFunctio
     res.status(201).json({ message: 'Waitlist entry created successfully' });
   } catch (error) {
     //if duplicate entry is found, return 1100 status code and tell that the email already exists
-    if ((error as any).code === 11000) {
-        res.status(400).json({ message: 'Email already exists in the waitlist' });
-    } else {
-        res.status(500).json({ message: 'Error creating waitlist entry', error: (error as Error).message });
-    }
+    if (error.code === 11000) {
+    res.status(500).json({ message: 'Error creating waitlist entry', error: (error as Error).message });
   }
 };
 
