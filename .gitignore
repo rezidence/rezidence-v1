@@ -29,6 +29,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+config.ts
 .env
 .env.development
 .env.test
@@ -166,6 +167,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+.config
 
 # Local Netlify folder
 .netlify
