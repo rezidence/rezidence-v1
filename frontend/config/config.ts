@@ -9,7 +9,7 @@ export const config = {
 
   clientUrl: process.env.CLIENT_URL || 'http://localhost:3000',
 
-  databaseUrl: process.env.DATABASE_URL || 'mongodb+srv://krunalchavda1353:Krunal1603@rezidencev1.efa5s.mongodb.net/?retryWrites=true&w=majority&appName=rezidenceV1',
+  databaseUrl: process.env.DATABASE_URL,
 
   env: process.env.NODE_ENV || 'development',
 

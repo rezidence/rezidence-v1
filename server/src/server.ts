@@ -8,6 +8,7 @@ import waitlistMiddleware from './middleware/wait.middleware';
 import { healthController } from './controllers/health.controller';
 import {authMiddleware} from './controllers/auth.controller';
 
+
 // Initialize express app
 const app = express();
 
