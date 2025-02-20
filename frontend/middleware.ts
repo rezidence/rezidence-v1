@@ -7,7 +7,8 @@ export function middleware(request: NextRequest) {
     '/properties',
     '/blog',
     '/properties/list',
-    '/connect/contact'
+    '/connect/contact',
+    '/press'
 
   ]
 
@@ -29,6 +30,7 @@ export const config = {
     '/properties/:path*',
     '/blog/:path*',
     '/properties/list',
-    '/connect/contact'
+    '/connect/contact',
+    '/press'
   ]
 } 
