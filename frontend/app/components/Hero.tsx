@@ -11,7 +11,7 @@ interface FloatingElementProps {
   delay?: number
 }
 
-const FloatingElement = ({ children, delay = 0 }: FloatingElementProps) => {
+export const FloatingElement = ({ children, delay = 0 }: FloatingElementProps) => {
   return (
     <motion.div
       animate={{
@@ -207,7 +207,7 @@ export default function Hero() {
     <section 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="min-h-screen relative overflow-hidden bg-black"
+      className="bg-black min-h-screen relative overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -311,26 +311,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-col sm:flex-row items-center gap-4"
               >
-                <Button
-                  onClick={() => router.push('/waitlist')}
-                  className="group relative overflow-hidden rounded-full bg-white px-8 py-6 text-lg font-semibold text-black transition-transform hover:scale-105"
-                >
-                  <span className="relative z-10">Join Waitlist</span>
-                  <motion.div
-                    initial={{ x: "100%" }}
-                    whileHover={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 z-0"
-                  />
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => router.push('/about')}
-                  className="text-white group px-8 py-6 text-lg font-semibold flex items-center gap-2"
-                >
-                  Learn More 
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+              
               </motion.div>
             </motion.div>
 

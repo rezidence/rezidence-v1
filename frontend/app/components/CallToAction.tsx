@@ -102,7 +102,7 @@ export default function CallToAction() {
             <Button
               variant="ghost"
               onClick={() => router.push('/owners/how-it-works')}
-              className="text-gray-300 hover:text-white px-8 py-6 text-lg font-semibold"
+              className="text-gray-300 hover:text-black px-8 py-6 text-lg font-semibold"
             >
               See How It Works
             </Button>

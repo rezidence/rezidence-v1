@@ -19,11 +19,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: "About", href: "/about" },
-    { name: "How it Works", href: "/renters/how-it-works" },
-    { name: "Safety", href: "/renters/safety" }
-  ]
+  
 
   return (
     <motion.header 
@@ -75,7 +71,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -92,7 +88,7 @@ export default function Header() {
                 </Link>
               </motion.div>
             ))}
-          </nav>
+          </nav> */}
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
@@ -106,7 +102,7 @@ export default function Header() {
                 onClick={() => router.push('/waitlist')}
                 className="text-gray-300 hover:text-white hover:bg-white/10"
               >
-                Sign Up
+                Join Waitlist
               </Button>
             </motion.div>
             <motion.div
@@ -115,10 +111,12 @@ export default function Header() {
               transition={{ duration: 0.3, delay: 0.5 }}
             >
               <Button
-                onClick={() => router.push('/waitlist')}
+                onClick={() => {
+                  document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="bg-gradient-to-r from-purple-500 to-blue-500 text-white hover:from-purple-600 hover:to-blue-600 transition-all duration-200"
               >
-                Get Started
+                Learn More
               </Button>
             </motion.div>
           </div>

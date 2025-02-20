@@ -1,10 +1,22 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Building2, ArrowRight, Sparkles, Shield, Target, Users, Clock, Key } from "lucide-react"
 
 export default function Features() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const containerRef = useRef<HTMLElement>(null)
+
+  // Parallax effect for background elements
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!containerRef.current) return
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width
+    const y = (e.clientY - rect.top) / rect.height
+    setMousePosition({ x, y })
+  }
+
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -73,7 +85,7 @@ export default function Features() {
   ]
 
   return (
-    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden">
+    <section ref={ref} className="bg-black py-16 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div 
           variants={containerVariants}

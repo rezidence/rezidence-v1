@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black text-gray-300 py-20 overflow-hidden">
+    <footer id="footer" className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black text-gray-300 py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(76,29,149,0.05)_0%,transparent_100%)]" />
@@ -110,18 +110,15 @@ export default function Footer() {
               Connect
             </h3>
             <ul className="space-y-4">
-              <li>
-                <Link 
-                  href="/connect/contact" 
-                  className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
-                >
+              <li>  
                   <span className="relative">
-                    Contact Us
+                  founder[dot]rezidence@gmail.com
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300" />
                   </span>
-                </Link>
+              
               </li>
-              <li>
+              {/* Social Media Icons */}
+              {/* <li>
                 <div className="flex space-x-6 items-center">
                   <Link 
                     href="/waitlist" 
@@ -148,7 +145,7 @@ export default function Footer() {
                     <FaLinkedin size={20} />
                   </Link>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
