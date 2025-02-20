@@ -25,158 +25,74 @@ A modern web application for exploring rental properties in 3D with AR technolog
   - Shadcn/ui inspired components
 - **Form Handling:** Server Actions
 - **Type Safety:** TypeScript
+- **Database:** Prisma
 - **Toast Notifications:** Custom implementation with Radix UI
-- **Utilities:** clsx, tailwind-merge for class management
-
-## 📦 Installation
-
-1. Clone the repository:
-
-```bash
-git clone [your-repository-url]
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Install required packages:
-```bash
-npm install framer-motion @radix-ui/react-toast class-variance-authority lucide-react clsx tailwind-merge @radix-ui/react-slot
-```
-
-4. Run the development server:
-```bash
-npm run dev
-```
+- **Utilities:** clsx, tailwind-merge
 
 ## 📁 Project Structure
 
 ```
-app/
-  ├── api/
-  │   └── waitlist/
-  │       └── route.ts          # Handles waitlist form submissions
-  ├── components/
-  │   ├── ui/
-  │   │   ├── button.tsx       # Reusable button component
-  │   │   ├── input.tsx        # Reusable input component
-  │   │   ├── toast.tsx        # Toast notification component
-  │   │   └── toaster.tsx      # Toast manager component
-  │   └── Hero.tsx             # Landing page hero section
-  ├── hooks/
-  │   └── use-toast.ts         # Custom hook for toast management
-  ├── lib/
-  │   └── utils.ts             # Utility functions
-  ├── waitlist/
-  │   └── page.tsx             # Waitlist signup page
-  ├── globals.css              # Global styles and CSS variables
-  └── layout.tsx               # Root layout with providers
+├── frontend/                  # Frontend Next.js application
+│   ├── .next/                # Next.js build output
+│   ├── app/                  # Next.js app directory
+│   ├── components/           # React components
+│   ├── config/              # Configuration files
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utility functions
+│   ├── prisma/              # Prisma schema and migrations
+│   ├── public/              # Static assets
+│   ├── styles/              # Global styles
+│   ├── types/               # TypeScript type definitions
+│   ├── .env.local           # Local environment variables
+│   ├── middleware.ts        # Next.js middleware
+│   ├── next.config.mjs      # Next.js configuration
+│   ├── tailwind.config.ts   # Tailwind CSS configuration
+│   └── tsconfig.json        # TypeScript configuration
+├── server/                   # Backend server (if separate)
+└── .env                     # Root environment variables
 ```
 
-## 🎨 Key Features Implementation
+## 📦 Installation
 
-### Waitlist System
-- Separate flows for renters and property owners
-- Form validation and error handling
-- Success/error notifications
-- Loading states during submission
+1. Clone the repository:
+```bash
+git clone https://github.com/rezidence/rezidence-v1.git
+```
 
-### Toast Notifications
-- Custom implementation using Radix UI
-- Multiple variants (success, error, etc.)
-- Auto-dismiss functionality
-- Smooth animations
+2. Navigate to frontend directory:
+```bash
+cd frontend
+```
 
-### UI Components
-- Custom button component with multiple variants
-- Responsive input fields
-- Gradient backgrounds
-- Interactive hover states
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Set up environment variables:
+Create `.env.local` in the frontend directory with necessary variables.
+
+5. Run the development server:
+```bash
+npm run dev
+```
 
 ## 🔧 Configuration
 
-### Tailwind Configuration
-```javascript
-// tailwind.config.js
-module.exports = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      // ... (rest of the configuration)
-    }
-  }
-}
-```
-
 ### Environment Variables
-Create a `.env.local` file in the root directory:
+Required environment variables in `.env.local`:
 ```bash
-# Add your environment variables here
 DATABASE_URL=your_database_url
 NEXT_PUBLIC_API_URL=your_api_url
+# Add other required variables
 ```
+
+### AWS Amplify
+The project uses AWS Amplify for deployment, configured via `amplify.yml`.
 
 ## 🚀 Deployment
 
-The application can be deployed on Vercel:
-
-1. Push your code to GitHub
-2. Import the project to Vercel
-3. Configure environment variables
-4. Deploy
-
-## 💻 Development Guidelines
-
-### Component Structure
-- Use TypeScript for type safety
-- Implement proper error handling
-- Add loading states for async operations
-- Include proper accessibility attributes
-
-### Styling Guidelines
-- Use Tailwind CSS utilities
-- Follow the design system color scheme
-- Maintain consistent spacing
-- Ensure responsive design
-
-### Best Practices
-- Use Next.js App Router features
-- Implement proper form validation
-- Handle loading and error states
-- Follow accessibility guidelines
-- Write clean, maintainable code
-
-## 🧪 Testing
-
-### Running Tests
-```bash
-npm run test
-```
-
-### Building for Production
-```bash
-npm run build
-```
-
-### Linting
-```bash
-npm run lint
-```
+The application is deployed on Vercel. Visit [rezidence.vercel.app](https://rezidence.vercel.app) to see the live version.
 
 ## 📝 Contributing
 
@@ -206,7 +122,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 👥 Authors
 
-- Your Name - Initial work
+- [Krunal Chavda](https://github.com/krunal16-c)
 
 ## 🙏 Acknowledgments
 
@@ -218,7 +134,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 🤝 Support
 
-For support, email [your-email@example.com] or join our Slack channel.
+For support, please open an issue in the GitHub repository.
 
 ## Branching Strategy
 
