@@ -6,8 +6,8 @@ import Header from "@/app/components/Header"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Rental App",
-  description: "Find your perfect rental property",
+  title: "Rezidence",
+  description: "A platform for property owners and renters to connect and manage properties.",
 }
 
 export default function RootLayout({

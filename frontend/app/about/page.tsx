@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black py-20">
@@ -45,7 +47,12 @@ export default function AboutPage() {
                   <div className="w-48 h-48 rounded-full overflow-hidden border-2 border-purple-500/50 bg-gray-800 relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10" />
                     <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-white/80">
-                      KC
+                    <Image
+                      src="/1730156018271.jpeg"
+                      alt="Krunal Chavda"
+                      fill
+                      className="object-cover"
+                    />
                     </div>
                     <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
