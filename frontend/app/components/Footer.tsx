@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"
 import { motion } from "framer-motion"
+import { mainModule } from "process"
 
 export default function Footer() {
   return (
@@ -111,13 +112,16 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>  
+                <Link 
+                  href="mailto:founder.rezidence@gmail.com"
+                  className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+                >
                   <span className="relative">
                   founder[dot]rezidence@gmail.com
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300" />
                   </span>
-              
+                </Link>
               </li>
-              {/* Social Media Icons */}
               {/* <li>
                 <div className="flex space-x-6 items-center">
                   <Link 
